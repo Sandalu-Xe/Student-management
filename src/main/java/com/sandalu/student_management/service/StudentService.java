@@ -8,7 +8,8 @@ import com.sandalu.student_management.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 @Service // Tells Spring this is a service
 public class StudentService {
 
@@ -20,10 +21,9 @@ public class StudentService {
         this.studentRepository = studentRepository;
     }
 
-    public List<Student> getAllStudents() {
-        return studentRepository.findAll();
+    public Page<Student> getAllStudents(Pageable pageable) {
+        return studentRepository.findAll(pageable);
     }
-
     public Student getStudentById(Long id) {
         return studentRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Student not found with id: " + id));
