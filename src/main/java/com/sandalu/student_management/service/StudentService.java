@@ -49,4 +49,11 @@ public class StudentService {
         Student existingStudent = getStudentById(id); // Check if exists first
         studentRepository.delete(existingStudent);
     }
+
+    // ... inside StudentService class
+
+    public List<Student> searchStudents(String query) {
+        // We pass the same query to search in both fields
+        return studentRepository.findByNameContainingIgnoreCaseOrCourseContainingIgnoreCase(query, query);
+    }
 }

@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  # This is your MySQL database service
+  db:
+    image: mysql:8.0
+    container_name: mysql-db
+    ports:
+      - "3306:3306" # Connects your computer's port 3306 to the container's 3306
+    environment:
+      MYSQL_ROOT_PASSWORD: your_password # Change this
+      MYSQL_DATABASE: student_db
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  # This is your Spring Boot application service
+  app:
+    build: .  # Tells Docker to build from the Dockerfile in this folder
+    container_name: student-app
+    ports:
+      - "8080:8080" # Connects your computer's port 8080 to the container's 8080
+    depends_on:
+      - db  # Tells your app to wait for the database to start
+    environment:
+      # This is the most important part:
+      # We tell Spring to connect to the database at 'db' (the service name)
+      # NOT 'localhost'
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/student_db?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: your_password # Use the same password as above
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+
+# This creates a persistent "volume" so your database data is saved
+volumes:
+  mysql-data:
