@@ -218,8 +218,17 @@ docker-compose up --build
 ## Screenshots
 
 ### Postman Testing
-![Postman GET Request](screenshots/postman-get.png)
-![Postman POST Request](screenshots/postman-post.png)
+![Postman GET Request]<img width="308" height="298" alt="image" src="https://github.com/user-attachments/assets/66ab9b4a-2a08-4f44-8504-a0608a99d007" />
+<img width="452" height="230" alt="image" src="https://github.com/user-attachments/assets/7870b242-29fc-41e2-af2d-805d20578022" />
+<img width="402" height="167" alt="image" src="https://github.com/user-attachments/assets/f45baa33-acbf-46b6-8807-d505689dd469" />
+<img width="452" height="289" alt="image" src="https://github.com/user-attachments/assets/5ce344b4-9fc1-4409-b4d8-3b97f71df9d1" />
+
+
+
+
+![Postman POST Request]
+<img width="318" height="235" alt="image" src="https://github.com/user-attachments/assets/83af02e7-859b-4d00-a20b-9ef6bc4de48e" />
+
 
 ### Swagger UI
 ![Swagger UI](screenshots/swagger-ui.png)
