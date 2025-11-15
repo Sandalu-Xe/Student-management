@@ -231,7 +231,19 @@ docker-compose up --build
 
 
 ### Swagger UI
-![Swagger UI](screenshots/swagger-ui.png)
+![Swagger UI]
+<img width="826" height="580" alt="image" src="https://github.com/user-attachments/assets/03d5fda0-4d2f-4b49-bd65-9347c92b8e7b" />
+
+<img width="817" height="484" alt="image" src="https://github.com/user-attachments/assets/a95465af-7a71-48b2-9f2a-4046addf7edd" />
+<img width="831" height="540" alt="image" src="https://github.com/user-attachments/assets/6f67eaa8-a41a-4dec-8064-e71c88555618" />
+<img width="633" height="448" alt="image" src="https://github.com/user-attachments/assets/e5d05fb9-9b73-4a60-bace-86ecccdb5525" />
+<img width="651" height="497" alt="image" src="https://github.com/user-attachments/assets/235128e7-c9ac-4554-9fa7-a0f95fb97f99" />
+
+
+
+
+
+
 
 ## Contributing
 
