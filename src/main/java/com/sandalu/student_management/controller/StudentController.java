@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 @RestController
 @RequestMapping("/api/students")
@@ -30,9 +32,9 @@ public class StudentController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Student>> getAllStudents() {
-        // Return 200 OK
-        return new ResponseEntity<>(studentService.getAllStudents(), HttpStatus.OK);
+    public ResponseEntity<Page<Student>> getAllStudents(Pageable pageable) {
+        Page<Student> students = studentService.getAllStudents(pageable);
+        return new ResponseEntity<>(students, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
